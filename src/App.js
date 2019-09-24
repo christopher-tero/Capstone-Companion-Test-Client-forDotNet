@@ -7,7 +7,7 @@ export default class App extends Component {
     super()
 
     this.state = {
-      projects: {}
+      projects: []
     }
   }
 
