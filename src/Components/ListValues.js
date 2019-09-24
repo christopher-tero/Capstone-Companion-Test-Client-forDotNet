@@ -5,7 +5,11 @@ export default function ListValues(props) {
   const listProjects = props.projects.map((project) => {
     console.log(project)
     return(
-      <p>{project.title}</p>
+      <div>
+      <h4>{project.title}  <button>Edit</button> <button>Delete</button></h4>
+
+      <p>{project.description}</p>
+      </div>
     )
   })
 
