@@ -17,8 +17,8 @@ export default class App extends Component {
       .then(result => this.setState({projects: result}))
   }
 
-  handleDelete() {
-    console.log("Delete entry")
+  handleDelete(id) {
+    console.log(id)
   }
 
   render() {
