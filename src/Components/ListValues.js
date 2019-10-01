@@ -13,7 +13,7 @@ export default function ListValues(props) {
     console.log(project)
     return(
       <div>
-      <h4>{project.title}  <button onClick={handleEdit}>Edit</button> <button onClick={handleDelete} id={props.id}>Delete</button></h4>
+      <h4>{project.title}  <button onClick={handleEdit}>Edit</button> <button onClick={props.handleDelete} id={props.id}>Delete</button></h4>
 
       <p>{project.description}</p>
       </div>

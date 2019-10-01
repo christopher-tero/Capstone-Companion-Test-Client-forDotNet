@@ -17,11 +17,18 @@ export default class App extends Component {
       .then(result => this.setState({projects: result}))
   }
 
+  handleDelete() {
+    console.log("Delete entry")
+  }
+
   render() {
     return (
       <div>
         <h1>Hello World!</h1>
-        {this.state.projects ? <ListValues projects={this.state.projects} /> : ""}
+        {this.state.projects ? <ListValues
+          projects={this.state.projects}
+          handleDelete={this.handleDelete}
+        /> : ""}
       </div>
     );
   }
