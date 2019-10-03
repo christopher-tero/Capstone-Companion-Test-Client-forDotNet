@@ -26,6 +26,15 @@ export default class App extends Component {
       .catch(error => console.error(error))
   }
 
+  handleEdit(id) {
+    console.log(id)
+    return (
+      <form>
+        <input type="text" />
+      </form>
+    )
+  }
+
   render() {
     return (
       <div>
@@ -33,6 +42,7 @@ export default class App extends Component {
         {this.state.projects ? <ListValues
           projects={this.state.projects}
           handleDelete={this.handleDelete}
+          handleEdit={this.handleEdit}
         /> : ""}
       </div>
     );
