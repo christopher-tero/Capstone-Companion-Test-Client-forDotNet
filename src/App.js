@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ListValues from './Components/ListValues'
 import './App.css';
+const url = "https://localhost:5001/api/values/"
 
 export default class App extends Component {
   constructor() {
@@ -12,13 +13,17 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://localhost:5000/api/values")
+    fetch(url)
       .then(response => response.json())
       .then(result => this.setState({projects: result}))
   }
 
   handleDelete(id) {
     console.log(id)
+    const filteredProjects = this.state.projects.filter(project => project.id !== id)
+    this.setState({projects: filteredProjects})
+    fetch(url + id, {method: "DELETE"})
+      .catch(error => console.error(error))
   }
 
   render() {

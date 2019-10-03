@@ -13,8 +13,10 @@ export default function ListValues(props) {
     //console.log(project.id)
     return(
       <div key={project.id}>
-      <h4>{project.title}  <button onClick={handleEdit(project.id)}>Edit</button> <button onClick={props.handleDelete(project.id)} id={project.id}>Delete</button></h4>
-
+      <h4>{project.title}
+        <button onClick={() => handleEdit(project.id)}>Edit</button>
+        <button onClick={() => props.handleDelete(project.id)} id={project.id}>Delete</button>
+      </h4>
       <p>{project.description}</p>
       </div>
     )
